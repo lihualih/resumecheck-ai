@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeCheck.ai — Free AI Resume Analyzer & Optimizer</title>
+  <meta name="description" content="Get instant AI-powered resume feedback. Free resume scoring, keyword analysis, and improvement suggestions. Optimize your resume for ATS systems.">
+  <meta name="keywords" content="resume analyzer, resume checker, resume optimizer, ATS resume checker, resume score, AI resume review, resume feedback">
+  <link rel="canonical" href="https://resumecheck.ai/">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ResumeCheck.ai",
+    "url": "https://resumecheck.ai",
+    "description": "Free AI-powered resume analyzer. Get instant feedback, scores, and improvement suggestions.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">
+        <div class="logo-icon">📄</div>
+        <span>ResumeCheck<span class="logo-ai">.ai</span></span>
+      </a>
+      <nav class="nav-links">
+        <span class="free-badge">Free</span>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>AI Resume Analyzer</h1>
+      <p>Paste your resume, select your target role, and get instant feedback with actionable improvement suggestions.</p>
+    </section>
+
+    <div class="container app-container">
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>📋 Your Resume</h2>
+            <div class="usage-badge" id="usage-badge">
+              <span id="remaining">3</span> free analyses remaining
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="target-role">Target Job Role</label>
+            <select id="target-role">
+              <option value="">Select a role (optional)</option>
+              <option value="software-engineer">Software Engineer</option>
+              <option value="frontend-developer">Frontend Developer</option>
+              <option value="backend-developer">Backend Developer</option>
+              <option value="fullstack-developer">Full Stack Developer</option>
+              <option value="data-scientist">Data Scientist</option>
+              <option value="data-analyst">Data Analyst</option>
+              <option value="product-manager">Product Manager</option>
+              <option value="project-manager">Project Manager</option>
+              <option value="designer">UI/UX Designer</option>
+              <option value="marketing">Marketing Manager</option>
+              <option value="sales">Sales Representative</option>
+              <option value="accountant">Accountant</option>
+              <option value="hr">HR Manager</option>
+              <option value="teacher">Teacher</option>
+              <option value="nurse">Nurse</option>
+              <option value="general">General / Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="resume-text">Paste Your Resume Text</label>
+            <textarea id="resume-text" placeholder="Paste the full text of your resume here...&#10;&#10;Tip: Copy from your PDF, Word doc, or Google Doc. The analyzer works best with plain text."></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-full" id="analyze-btn" onclick="analyzeResume()">
+            🔍 Analyze My Resume
+          </button>
+
+          <p class="privacy-note">🔒 Your resume data is processed locally. We never store or transmit your personal information.</p>
+        </div>
+      </div>
+
+      <!-- Results Section -->
+      <div class="results-section" id="results-section" style="display:none;">
+        <!-- Overall Score -->
+        <div class="panel score-panel">
+          <div class="score-circle" id="score-circle">
+            <svg viewBox="0 0 120 120">
+              <circle class="score-bg" cx="60" cy="60" r="54"></circle>
+              <circle class="score-fill" cx="60" cy="60" r="54" id="score-ring"></circle>
+            </svg>
+            <div class="score-value" id="score-value">0</div>
+          </div>
+          <div class="score-label" id="score-label">Analyzing...</div>
+          <div class="score-sublabel" id="score-sublabel"></div>
+        </div>
+
+        <!-- Category Scores -->
+        <div class="panel">
+          <h2>📊 Category Breakdown</h2>
+          <div class="category-scores" id="category-scores"></div>
+        </div>
+
+        <!-- Strengths -->
+        <div class="panel">
+          <h2>✅ Strengths</h2>
+          <ul class="feedback-list" id="strengths-list"></ul>
+        </div>
+
+        <!-- Issues -->
+        <div class="panel">
+          <h2>⚠️ Issues to Fix</h2>
+          <ul class="feedback-list" id="issues-list"></ul>
+        </div>
+
+        <!-- Suggestions -->
+        <div class="panel">
+          <h2>💡 Improvement Suggestions</h2>
+          <ul class="feedback-list" id="suggestions-list"></ul>
+        </div>
+
+        <!-- Keywords -->
+        <div class="panel">
+          <h2>🔑 Keyword Analysis</h2>
+          <div id="keyword-analysis"></div>
+        </div>
+
+        <!-- Action Verbs -->
+        <div class="panel">
+          <h2>💪 Action Verb Usage</h2>
+          <div id="action-verbs"></div>
+        </div>
+
+        <!-- Re-analyze -->
+        <button class="btn btn-secondary btn-full" onclick="resetAnalyzer()">
+          ← Analyze Another Resume
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 ResumeCheck.ai — Free resume analysis. Your data stays in your browser.</p>
+    </div>
+  </footer>
+
+  <script src="js/analyzer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
