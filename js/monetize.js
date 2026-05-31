@@ -3,7 +3,7 @@
  * Add this to all projects for: Analytics, AdSense, Affiliate links
  *
  * SETUP INSTRUCTIONS:
- * 1. Replace 'G-XXXXXXXXXX' with your Google Analytics 4 ID
+ * 1. Replace 'G-8B535Q7PN4' with your Google Analytics 4 ID
  * 2. Replace 'ca-pub-XXXXXXXXXXXXXXXX' with your AdSense Publisher ID
  * 3. Get GA4 ID: https://analytics.google.com → Create Property → Data Streams
  * 4. Get AdSense: https://adsense.google.com → Apply (need traffic first)
@@ -14,13 +14,13 @@
 
   // ===== Configuration =====
   const CONFIG = {
-    GA_ID: 'G-XXXXXXXXXX',           // Replace with your GA4 Measurement ID
+    GA_ID: 'G-8B535Q7PN4',           // Replace with your GA4 Measurement ID
     ADSENSE_ID: 'ca-pub-XXXXXXXXXXXXXXXX', // Replace with your AdSense Publisher ID
     AFFILIATE_TAG: 'freetool-20',     // Amazon affiliate tag (if applicable)
   };
 
   // ===== Google Analytics 4 =====
-  if (CONFIG.GA_ID !== 'G-XXXXXXXXXX') {
+  if (CONFIG.GA_ID !== 'G-8B535Q7PN4') {
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.GA_ID;
