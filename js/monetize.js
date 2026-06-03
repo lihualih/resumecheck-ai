@@ -20,7 +20,7 @@
   };
 
   // ===== Google Analytics 4 =====
-  if (CONFIG.GA_ID !== 'G-8B535Q7PN4') {
+  if (CONFIG.GA_ID && CONFIG.GA_ID !== 'G-XXXXXXXXXX') {
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.GA_ID;
